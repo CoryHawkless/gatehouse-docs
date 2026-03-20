@@ -1,0 +1,159 @@
+/**
+ * Secuird Documentation — Global Styles
+ * Built on Infima (Docusaurus default CSS framework)
+ */
+
+/* ─── Brand Palette — light mode ──────────────────────────────────────────── */
+:root {
+  /* Secuird teal brand */
+  --ifm-color-primary: #1f9e8e;
+  --ifm-color-primary-dark: #1a8a7b;
+  --ifm-color-primary-darker: #167a6d;
+  --ifm-color-primary-darkest: #0f5a50;
+  --ifm-color-primary-light: #36b9a6;
+  --ifm-color-primary-lighter: #55caba;
+  --ifm-color-primary-lightest: #8dddd4;
+
+  --ifm-code-font-size: 94%;
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-weight: 700;
+  --ifm-navbar-shadow: 0 1px 0 0 var(--ifm-toc-border-color);
+
+  --docusaurus-highlighted-code-line-bg: rgba(54, 185, 166, 0.08);
+
+  /* Badge / status colors */
+  --gh-badge-get: #16a34a;
+  --gh-badge-post: #2563eb;
+  --gh-badge-patch: #d97706;
+  --gh-badge-delete: #dc2626;
+}
+
+/* ─── Brand Palette — dark mode ───────────────────────────────────────────── */
+[data-theme='dark'] {
+  --ifm-color-primary: #36b9a6;
+  --ifm-color-primary-dark: #2da898;
+  --ifm-color-primary-darker: #25998a;
+  --ifm-color-primary-darkest: #1a7a6e;
+  --ifm-color-primary-light: #55caba;
+  --ifm-color-primary-lighter: #76d7c9;
+  --ifm-color-primary-lightest: #a8e8e1;
+
+  --docusaurus-highlighted-code-line-bg: rgba(54, 185, 166, 0.12);
+}
+
+/* ─── Hero banner ──────────────────────────────────────────────────────────── */
+/* (homepage hero uses its own module CSS; this targets any fallback hero) */
+.hero--primary {
+  background: linear-gradient(160deg, var(--hp-hero-bg-from, #f0fdfa) 0%, var(--hp-hero-bg-mid, #e6faf6) 55%, var(--hp-hero-bg-to, #f0fdfa) 100%);
+  color: var(--ifm-heading-color);
+}
+
+.hero__title {
+  font-size: 3.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ifm-heading-color);
+}
+
+.hero__subtitle {
+  font-size: 1.25rem;
+  color: var(--ifm-color-secondary);
+  max-width: 640px;
+  margin: 1rem auto;
+}
+
+/* ─── Navbar ───────────────────────────────────────────────────────────────── */
+.navbar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.navbar__title {
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+/* ─── Sidebar ──────────────────────────────────────────────────────────────── */
+.menu__link--active:not(.menu__link--sublist) {
+  background: rgba(54, 185, 166, 0.08);
+  border-left: 2px solid var(--ifm-color-primary);
+}
+
+/* ─── API Method Badges ────────────────────────────────────────────────────── */
+.api-badge {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: monospace;
+  letter-spacing: 0.04em;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  color: #fff;
+}
+.api-badge--get    { background: var(--gh-badge-get); }
+.api-badge--post   { background: var(--gh-badge-post); }
+.api-badge--patch  { background: var(--gh-badge-patch); }
+.api-badge--put    { background: var(--gh-badge-patch); }
+.api-badge--delete { background: var(--gh-badge-delete); }
+
+/* ─── Feature cards (homepage) ─────────────────────────────────────────────── */
+.features {
+  padding: 4rem 0;
+  background: var(--ifm-background-color);
+}
+
+.featureCard {
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(54, 185, 166, 0.15);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.featureCard:hover {
+  border-color: rgba(54, 185, 166, 0.4);
+  box-shadow: 0 4px 24px rgba(54, 185, 166, 0.10);
+}
+
+/* ─── Announcement bar ─────────────────────────────────────────────────────── */
+div[class*='announcementBar'] {
+  font-size: 0.85rem;
+}
+
+/* ─── Code blocks ──────────────────────────────────────────────────────────── */
+.prism-code {
+  font-size: 0.875rem;
+  border-radius: 8px;
+}
+
+/* ─── Admonitions ──────────────────────────────────────────────────────────── */
+.alert--info {
+  border-left-color: var(--ifm-color-primary);
+}
+
+/* ─── Tables ───────────────────────────────────────────────────────────────── */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table th {
+  background: rgba(54, 185, 166, 0.06);
+  font-weight: 600;
+}
+
+table td, table th {
+  border: 1px solid var(--ifm-table-border-color);
+  padding: 0.6rem 1rem;
+}
+
+/* ─── Response envelope example ────────────────────────────────────────────── */
+.response-envelope {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid rgba(54, 185, 166, 0.2);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  font-family: monospace;
+  font-size: 0.85rem;
+}

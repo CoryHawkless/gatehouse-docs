@@ -1,0 +1,281 @@
+/**
+ * Secuird Documentation — Homepage styles
+ * All colours are theme-aware via CSS custom properties.
+ * Dark values are set in [data-theme='dark'] overrides at the bottom.
+ */
+
+/* ── Theme tokens (light mode defaults) ──────────────────────────────────── */
+
+:root {
+  --hp-hero-bg-from:   #f0fdfa;
+  --hp-hero-bg-mid:    #e6faf6;
+  --hp-hero-bg-to:     #f0fdfa;
+  --hp-hero-border:    rgba(31, 158, 142, 0.15);
+  --hp-hero-title:     #0f3630;
+  --hp-hero-subtitle:  #3d6b65;
+  --hp-eyebrow-color:  #1f9e8e;
+
+  --hp-card-bg:        #ffffff;
+  --hp-card-border:    rgba(31, 158, 142, 0.18);
+  --hp-card-border-hv: rgba(31, 158, 142, 0.5);
+  --hp-card-shadow-hv: rgba(31, 158, 142, 0.10);
+
+  --hp-qs-bg:          #f8fffe;
+  --hp-qs-border:      rgba(31, 158, 142, 0.12);
+  --hp-step-bg:        rgba(31, 158, 142, 0.10);
+  --hp-step-border:    rgba(31, 158, 142, 0.30);
+  --hp-step-color:     #1f9e8e;
+
+  /* Text colours — explicitly set so we never rely on Infima's near-white secondary */
+  --hp-text-heading:   #1a2e2c;
+  --hp-text-body:      #374847;
+  --hp-text-muted:     #5a7270;
+}
+
+/* Dark mode overrides */
+[data-theme='dark'] {
+  --hp-hero-bg-from:   #0d1117;
+  --hp-hero-bg-mid:    #0f2a28;
+  --hp-hero-bg-to:     #0d1117;
+  --hp-hero-border:    rgba(54, 185, 166, 0.12);
+  --hp-hero-title:     #f0faf9;
+  --hp-hero-subtitle:  #8ba9a6;
+  --hp-eyebrow-color:  #36b9a6;
+
+  --hp-card-bg:        transparent;
+  --hp-card-border:    rgba(54, 185, 166, 0.14);
+  --hp-card-border-hv: rgba(54, 185, 166, 0.40);
+  --hp-card-shadow-hv: rgba(54, 185, 166, 0.08);
+
+  --hp-qs-bg:          var(--ifm-background-surface-color);
+  --hp-qs-border:      rgba(54, 185, 166, 0.10);
+  --hp-step-bg:        rgba(54, 185, 166, 0.15);
+  --hp-step-border:    rgba(54, 185, 166, 0.35);
+  --hp-step-color:     #36b9a6;
+
+  /* Text colours — dark mode */
+  --hp-text-heading:   #e8f5f3;
+  --hp-text-body:      #a8c5c1;
+  --hp-text-muted:     #7ba8a3;
+}
+
+/* ── Hero ─────────────────────────────────────────────────────────────────── */
+
+.hero {
+  background: linear-gradient(
+    160deg,
+    var(--hp-hero-bg-from) 0%,
+    var(--hp-hero-bg-mid)  55%,
+    var(--hp-hero-bg-to)   100%
+  );
+  padding: 7rem 1.5rem 6rem;
+  text-align: center;
+  border-bottom: 1px solid var(--hp-hero-border);
+}
+
+.heroInner {
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--hp-eyebrow-color);
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: var(--hp-hero-title);
+  margin-bottom: 1.25rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--hp-hero-subtitle);
+  max-width: 580px;
+  margin: 0 auto 2.25rem;
+}
+
+.cta {
+  display: flex;
+  gap: 0.875rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 4.5rem 1.25rem 4rem;
+  }
+  .cta {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ── Pillars ─────────────────────────────────────────────────────────────── */
+
+.pillars {
+  padding: 5rem 0;
+  background: var(--ifm-background-color);
+}
+
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .pillarsGrid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+.pillarCard {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.75rem;
+  background: var(--hp-card-bg);
+  border: 1px solid var(--hp-card-border);
+  border-radius: 10px;
+  text-decoration: none !important;
+  color: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.pillarCard:hover {
+  border-color: var(--hp-card-border-hv);
+  box-shadow: 0 6px 28px var(--hp-card-shadow-hv);
+  transform: translateY(-2px);
+  color: inherit;
+}
+
+.pillarDot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  margin-bottom: 1.25rem;
+}
+
+.pillarTitle {
+  font-size: 1rem !important;
+  font-weight: 700;
+  margin-bottom: 0.6rem !important;
+  color: var(--hp-text-heading);
+}
+
+.pillarDesc {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--hp-text-body);
+  margin: 0 0 1.25rem;
+  flex: 1;
+}
+
+.pillarLink {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  letter-spacing: 0.01em;
+}
+
+/* ── Quick-start ─────────────────────────────────────────────────────────── */
+
+.quickstart {
+  padding: 5rem 0;
+  background: var(--hp-qs-bg);
+  border-top: 1px solid var(--hp-qs-border);
+  border-bottom: 1px solid var(--hp-qs-border);
+}
+
+.quickstartInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .quickstartInner {
+    grid-template-columns: 1fr;
+  }
+}
+
+.quickstartHeading {
+  font-size: 1.75rem !important;
+  font-weight: 800;
+  margin-bottom: 0.75rem !important;
+  color: var(--hp-text-heading);
+}
+
+.quickstartSub {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--hp-text-body);
+  margin-bottom: 1.5rem;
+}
+
+.quickstartActions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* ── Steps list ──────────────────────────────────────────────────────────── */
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.step {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.stepNum {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--hp-step-bg);
+  border: 1px solid var(--hp-step-border);
+  color: var(--hp-step-color);
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.stepTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--hp-text-heading);
+}
+
+.stepDesc {
+  font-size: 0.85rem;
+  color: var(--hp-text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
