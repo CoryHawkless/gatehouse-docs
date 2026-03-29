@@ -50,6 +50,7 @@ const sidebars: SidebarsConfig = {
         'integrations/oauth-social',
         'integrations/ssh-ca',
         'integrations/cli',
+        'integrations/zerotier',
       ],
     },
     {
